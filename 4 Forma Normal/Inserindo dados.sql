@@ -159,17 +159,32 @@ INSERT INTO ITENS_PEDIDOS (COD_PEDIDO, COD_LIVRO, QTD_PEDIDO, VALOR_ITENS) VALUE
 ('PED020', 'LVR018', 1, 24.95),
 ('PED020', 'LVR016', 1, 31.75);
 
-INSERT INTO COLABORADORES (COD_COLAB, NOME, DEPARTAMENTO, CARGO,DEPENDENTES) VALUES
-('CLB001', 'João da Silva', 'Vendas', 'Vendedor','Maria João'),
-('CLB002', 'Maria Oliveira', 'Vendas', 'Gerente de Vendas','Ana Maria'),
-('CLB003', 'Pedro Souza', 'Marketing', 'Analista de Mkt','Aline Siuza'),
-('CLB004', 'Ana Santos', 'RH', 'Analista de RH','Carlos Antonio'),
-('CLB005', 'Carlos Lima', 'RH', 'Gerente de RH','Alberto Lima'),
-('CLB006', 'Antonio José', 'Vendas', 'Vendedor','Maria Joana');
+INSERT INTO COLABORADORES (COD_COLAB, NOME) VALUES
+('CLB001', 'João da Silva'),
+('CLB002', 'Maria Oliveira'),
+('CLB003', 'Pedro Souza'),
+('CLB004', 'Ana Santos'),
+('CLB006', 'Antonio José');
 
-INSERT INTO SALARIOSCARGO (DEPARTAMENTO, CARGO, SALARIO_BASE) VALUES
-('Vendas', 'Vendedor', 3500.00),
-('Vendas', 'Gerente de Vendas', 5000.00),
-('Marketing', 'Analista de Mkt', 4200.000),
-('RH', 'Analista de RH', 3800.00),
-('RH', 'Gerente de RH', 5500.00);
+INSERT INTO COLABORADORES_CARGOS (COD_COLAB, COD_SALARIO_CAR) VALUES
+('CLB001', 'SC001'),
+('CLB002', 'SC002'),
+('CLB003', 'SC003'),
+('CLB004', 'SC004'),
+('CLB004', 'SC005'),
+('CLB006', 'SC001');
+
+INSERT INTO SALARIOSCARGO (COD_SALARIO_CAR, DEPARTAMENTO, CARGO, SALARIO_BASE) VALUES
+('SC001','Vendas', 'Vendedor', 3500.00),
+('SC002','Vendas', 'Gerente de Vendas', 5000.00),
+('SC003','Marketing', 'Analista de Mkt', 4200.000),
+('SC004','RH', 'Analista de RH', 3800.00),
+('SC005','RH', 'Gerente de RH', 5500.00);
+
+INSERT INTO DEPENDENTES (COD_DEPENDENTE, COD_COLAB, DEPENDENTES) VALUES
+('DEP001', 'CLB001', 'Maria João'),
+('DEP002', 'CLB002', 'Ana Maria'),
+('DEP003', 'CLB003', 'Aline Siuza'),
+('DEP004', 'CLB004', 'Carlos Antonio'),
+('DEP005', 'CLB004', 'Maria Isabel'),
+('DEP006', 'CLB005', 'Maria Joana');
